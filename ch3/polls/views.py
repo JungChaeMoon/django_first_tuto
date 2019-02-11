@@ -23,7 +23,7 @@ def vote(request, question_id):
         #설문 투표 폼을 다시 보여준다
         return render(request, 'polls/detail.html', {
             'question': question,
-            'error_message': "You didn't select a choice. 당신 다시선택해  ",
+            'error_message': "You didn't select a choice.",
         })
     else:
         selected_choice.votes += 1
