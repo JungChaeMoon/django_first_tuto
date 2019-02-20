@@ -17,7 +17,14 @@ class BooksModelView(TemplateView):
 
 class BookList(ListView):
     model = Book
+"""
+def BookList(request):
+    book_list = Book.object.all()
+    context = {'book_list' : book_list}
+    return
+        render(request, 'book/book_list.html', context)
 
+"""
 class AuthorList(ListView):
     model = Author
 
