@@ -23,7 +23,6 @@ def BookList(request):
     context = {'book_list' : book_list}
     return
         render(request, 'book/book_list.html', context)
-
 """
 class AuthorList(ListView):
     model = Author
