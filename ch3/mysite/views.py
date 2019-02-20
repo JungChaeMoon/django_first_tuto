@@ -8,4 +8,3 @@ class HomeView(TemplateView):
         context = super().get_context_data(**kwargs)
         context['app_list'] = ['polls','books']
         return context
-    
