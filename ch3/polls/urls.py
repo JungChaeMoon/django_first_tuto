@@ -9,3 +9,8 @@ urlpatterns=[
     path('<int:question_id>/results/', views.results, name='results'),
     path('<int:question_id>/vote/', views.vote, name='vote'),
 ]
+
+
+"""
+question_id i는 models  에서 declare 되었는데 why안넘어갈까
+"""

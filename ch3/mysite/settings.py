@@ -55,7 +55,7 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],#템플릿의 정확한 경로설정이 알고싶다 view()함수
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
