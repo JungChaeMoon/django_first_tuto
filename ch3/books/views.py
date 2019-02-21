@@ -5,6 +5,7 @@ from django.shortcuts import render
 from books.models import Book, Author, Publisher
 from django.views.generic.base import TemplateView
 from django.views.generic import ListView, DetailView
+from django.apps import apps
 
 class BooksModelView(TemplateView):
 
@@ -12,7 +13,12 @@ class BooksModelView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['model_list'] = ['Book', 'Author', 'Publisher']
+        #context['model_list'] = ['Book', 'Author', 'Publisher']
+        dictVerbose={}
+        for app in apps.get_app_configs():
+            if 'site-packages' not in app.path:
+                dictVerbose[app.label] = app.verbose_name
+        context['verbose_dict'] = dictVerbose
         return context
 
 class BookList(ListView):
